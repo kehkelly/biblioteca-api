@@ -192,7 +192,6 @@ SPRING_PROFILES_ACTIVE=prod
 
 ## Deploy em Producao
 
-Sugestao:
 
 - Aplicacao: Render
 - Banco: PostgreSQL no Render ou Supabase
@@ -213,9 +212,9 @@ Adicionar aqui o link depois do deploy.
 
 ## Divisao de tarefas
 
-- Integrante 1: estrutura inicial, entidades e banco de dados
-- Integrante 2: controllers e rotas REST
-- Integrante 3: services e regras de negocio
-- Integrante 4: testes unitarios e cobertura JaCoCo
-- Integrante 5: Swagger, README e exemplos de uso
-- Integrante 6: deploy e configuracao de producao
+- Kelly Dantas: estrutura inicial, entidades e banco de dados
+- Rubens Bolognesi: controllers e rotas REST
+- Kelly Dantas: services e regras de negocio
+- Rubens Bolognesi: testes unitarios e cobertura JaCoCo
+- Kelly Dantas: Swagger, README e exemplos de uso
+- Rubens Bolognesi: deploy e configuracao de producao
