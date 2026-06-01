@@ -190,25 +190,58 @@ DATABASE_PASSWORD=senha
 SPRING_PROFILES_ACTIVE=prod
 ```
 
-## Deploy em Producao
+## Deploy em Produção
 
+Link público da API:
 
-- Aplicacao: Render
-- Banco: PostgreSQL no Render ou Supabase
+```text
+https://biblioteca-api.onrender.com
+```
+
+> Observação: substituir o link acima pelo link real gerado pelo Render depois da publicação.
+
+O deploy foi planejado para a plataforma Render, utilizando Docker para conteinerizar a aplicação Spring Boot e PostgreSQL como banco de dados de produção. Para isso, foram criados os arquivos `Dockerfile` e `.dockerignore`.
+
+### Plataforma utilizada
+
+- Aplicação: Render Web Service
+- Banco de dados: PostgreSQL no Render ou Supabase
+- Estratégia: aplicação conteinerizada com Docker
 
 Passos gerais:
 
-1. Criar o banco PostgreSQL.
-2. Criar um Web Service apontando para o repositorio GitHub.
-3. Configurar as variaveis `DATABASE_URL`, `DATABASE_USERNAME`, `DATABASE_PASSWORD` e `SPRING_PROFILES_ACTIVE=prod`.
-4. Usar o comando de build `mvn clean package`.
-5. Usar o comando de start `java -jar target/biblioteca-api-0.0.1-SNAPSHOT.jar`.
+1. Criar um banco PostgreSQL no Render ou Supabase.
+2. Criar um novo Web Service no Render apontando para o repositório GitHub do projeto.
+3. Escolher a opção de deploy via Docker, usando o `Dockerfile` presente na raiz do projeto.
+4. Configurar as variáveis de ambiente no painel do Render.
+5. Fazer o deploy e validar a API pelo Swagger.
 
-Link publico da API:
+### Variáveis de ambiente
+
+```properties
+SPRING_PROFILES_ACTIVE=prod
+DATABASE_URL=jdbc:postgresql://host:5432/nome_do_banco
+DATABASE_USERNAME=usuario_do_banco
+DATABASE_PASSWORD=senha_do_banco
+```
+
+O profile `prod` usa a porta fornecida pela plataforma por meio da variável `PORT`. Caso essa variável não exista, a aplicação usa a porta `8080`.
+
+### Validação em produção
+
+Após o deploy, acessar:
 
 ```text
-Adicionar aqui o link depois do deploy.
+https://biblioteca-api.onrender.com/swagger-ui.html
 ```
+
+Também é possível testar uma rota pública da API:
+
+```bash
+curl https://biblioteca-api.onrender.com/livros
+```
+
+> Substituir `https://biblioteca-api.onrender.com` pelo link real da aplicação no Render.
 
 ## Divisao de tarefas
 
