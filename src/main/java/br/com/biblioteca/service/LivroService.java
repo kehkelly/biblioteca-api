@@ -8,6 +8,7 @@ import br.com.biblioteca.model.Categoria;
 import br.com.biblioteca.model.Livro;
 import br.com.biblioteca.repository.LivroRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class LivroService {
         this.categoriaService = categoriaService;
     }
 
+    @Transactional
     public LivroResponse criar(LivroRequest request) {
         if (livroRepository.existsByIsbn(request.isbn())) {
             throw new RegraNegocioException("Ja existe um livro cadastrado com esse ISBN");
@@ -40,6 +42,7 @@ public class LivroService {
         return LivroResponse.fromEntity(livroRepository.save(livro));
     }
 
+    @Transactional(readOnly = true)
     public List<LivroResponse> listar() {
         return livroRepository.findAll()
                 .stream()
@@ -47,10 +50,12 @@ public class LivroService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
     public LivroResponse buscarPorId(Long id) {
         return LivroResponse.fromEntity(buscarEntidadePorId(id));
     }
 
+    @Transactional(readOnly = true)
     public List<LivroResponse> filtrar(String autor, String categoria) {
         if (autor != null && !autor.isBlank()) {
             return livroRepository.findByAutorContainingIgnoreCase(autor)
@@ -69,6 +74,7 @@ public class LivroService {
         return listar();
     }
 
+    @Transactional
     public LivroResponse atualizar(Long id, LivroRequest request) {
         Livro livro = buscarEntidadePorId(id);
 
@@ -89,6 +95,7 @@ public class LivroService {
         return LivroResponse.fromEntity(livroRepository.save(livro));
     }
 
+    @Transactional
     public void deletar(Long id) {
         Livro livro = buscarEntidadePorId(id);
         livroRepository.delete(livro);
