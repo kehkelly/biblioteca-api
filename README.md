@@ -195,10 +195,10 @@ SPRING_PROFILES_ACTIVE=prod
 Link público da API:
 
 ```text
-https://biblioteca-api.onrender.com
+https://biblioteca-api-zk6g.onrender.com
 ```
 
-> Observação: substituir o link acima pelo link real gerado pelo Render depois da publicação.
+API publicada no Render e disponível publicamente.
 
 O deploy foi planejado para a plataforma Render, utilizando Docker para conteinerizar a aplicação Spring Boot e PostgreSQL como banco de dados de produção. Para isso, foram criados os arquivos `Dockerfile` e `.dockerignore`.
 
@@ -232,16 +232,14 @@ O profile `prod` usa a porta fornecida pela plataforma por meio da variável `PO
 Após o deploy, acessar:
 
 ```text
-https://biblioteca-api.onrender.com/swagger-ui.html
+https://biblioteca-api-zk6g.onrender.com/swagger-ui.html
 ```
 
 Também é possível testar uma rota pública da API:
 
 ```bash
-curl https://biblioteca-api.onrender.com/livros
+curl https://biblioteca-api-zk6g.onrender.com/livros
 ```
-
-> Substituir `https://biblioteca-api.onrender.com` pelo link real da aplicação no Render.
 
 ## Divisao de tarefas
 
