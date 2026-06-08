@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
 
+//Interceptador e tradutor de erros internos 
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
