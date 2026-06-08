@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+//Objeto de transporte
+
 public record LivroRequest(
         @NotBlank(message = "O titulo e obrigatorio")
         @Size(max = 120, message = "O titulo deve ter no maximo 120 caracteres")
