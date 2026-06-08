@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+//Regras de negocio
+
 @Service
 public class LivroService {
 
