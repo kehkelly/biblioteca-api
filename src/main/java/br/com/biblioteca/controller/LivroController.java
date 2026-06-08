@@ -75,6 +75,6 @@ public class LivroController {
     @Operation(summary = "Deletar livro", description = "Remove um livro pelo identificador")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         livroService.deletar(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build() ;
     }
 }
