@@ -36,7 +36,7 @@ public class LivroController {
     @Operation(summary = "Criar livro", description = "Cadastra um novo livro")
     public ResponseEntity<LivroResponse> criar(@Valid @RequestBody LivroRequest request) {
         LivroResponse response = livroService.criar(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response) ;
     }
 
     @GetMapping
