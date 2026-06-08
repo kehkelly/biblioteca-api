@@ -10,6 +10,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+//Dados no sistema, espelho da tabela de banco de dados
+
 @Entity
 @Table(name = "livros")
 public class Livro {

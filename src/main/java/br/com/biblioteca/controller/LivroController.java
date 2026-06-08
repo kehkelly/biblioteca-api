@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+//Porta de entrada da API
+
 @RestController
 @RequestMapping("/livros")
 @Tag(name = "Livros", description = "Gerenciamento dos livros da biblioteca")
