@@ -1,6 +1,6 @@
 # Biblioteca API
 
-Trabalho POO - microservico REST desenvolvido com Java e Spring Boot para gerenciamento de livros e categorias de uma biblioteca.
+Trabalho POO - microserviço REST desenvolvido com Java e Spring Boot para gerenciamento de livros e categorias de uma biblioteca.
 
 ## Tecnologias
 
@@ -45,7 +45,7 @@ src/main/java/br/com/biblioteca
 
 ## Como rodar localmente
 
-### Pre-requisitos
+### Pré-requisitos
 
 - Java 17 instalado
 - Maven instalado
@@ -56,7 +56,7 @@ src/main/java/br/com/biblioteca
 mvn spring-boot:run
 ```
 
-A API ficara disponivel em:
+A API ficará disponivel em:
 
 ```text
 http://localhost:8080
@@ -64,7 +64,7 @@ http://localhost:8080
 
 ## Banco H2
 
-No profile `dev`, a aplicacao usa banco em memoria H2.
+No profile `dev`, a aplicação usa banco em memória H2.
 
 Console H2:
 
@@ -82,7 +82,7 @@ Senha: deixe em branco
 
 ## Swagger
 
-A documentacao interativa da API fica em:
+A documentação interativa da API fica em:
 
 ```text
 http://localhost:8080/swagger-ui.html
@@ -167,7 +167,7 @@ Rodar testes:
 mvn clean test
 ```
 
-Gerar relatorio de cobertura com JaCoCo:
+Gerar relatório de cobertura com JaCoCo:
 
 ```bash
 mvn clean verify
